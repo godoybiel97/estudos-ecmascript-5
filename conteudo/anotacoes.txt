@@ -1,0 +1,51 @@
+HISTÓRIA DO ECMASCRIPT-6
+------------------------
+- Criado em 1995 por Brendan Eich (Netscape)
+
+
+- ECMA: European Computer Manufactorer Association
+    - Especificação de como as principais partes da linguagem JavaScript devem ser implementadas pelos "browsers"
+
+    - ES5 foi a versão padronizada em 2009 e a mais significativa
+
+    - ES6 foi desenvolvida em 2015 e tem sido muito utilizada:
+        - Os browsers estavam atrasados em relação ao avanço da linguagem, por isso era necessário utilizar "transpilers" para traduzir o ES6 para o ES5
+
+
+
+DECLARAÇÃO DE VARIÁVEIS - FUNDAMENTOS DO ES6
+--------------------------------------------
+- Operadores de declaração de variáveis:
+    - Escopos global, função e bloco
+
+    - var: foi descontinuado, mas ainda existe para manter aplicações antigas. O tipo var é regido por uma antiga regra de hierarquia de escopos
+
+    - let: preserva o escopo onde foi criado, sendo inacessível para outros escopos
+
+    - const: não sofre alteração após ser declarada (constante) e também preserva o escopo onde foi criado
+
+
+
+TEMPLATE STRING - FUNDAMENTOS DO ES6
+------------------------------------
+- Template string é um recurso para concatenação ou interpolação de codificação javascript com "strings":
+    - Apresenta-se como `${}`:
+        - let nome = "Gabriel"
+          console.log(`Olá, ${nome}. Tudo bem ?`)
+        
+        - Dados JS permanecem dentro dos ${}, enquanto as "strings" ficam fora
+        
+    - Diferente das aspas, é possível realizar quebra de linha:
+        - let nome = "Gabriel"
+          console.log(`Olá, ${nome}. 
+          Seja bem-vindo !
+          Espero que esteja bem.`)
+
+    - Permite executar funções:
+        - function calcular(a, b) {
+            return a + b
+          }
+          console.log(`A soma entre 2+2 é igual a ${calcular(2, 2)}`)
+
+
+
