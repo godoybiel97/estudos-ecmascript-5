@@ -49,3 +49,108 @@ TEMPLATE STRING - FUNDAMENTOS DO ES6
 
 
 
+FUNÇÕES - FUNDAMENTOS DO ES6
+----------------------------
+- Parâmetros "default" são utilizados na assinatura da função:
+    - function historia(nome = "Gabriel", time = "SPFC") {
+        document.write(`O ${nome} ama o ${time}`)
+      }
+      historia()   -> Dessa forma é utilizado os parâmetros da assinatura da função
+
+    - function historia(nome, time) {
+        document.write(`O ${nome} ama o ${time}`)
+      }
+      historia("Gabriel", "SPFC")   -> Dessa forma valores dos parâmetros são passados na execução da função
+
+    - function historia(nome = "Gabriel", time = "SPFC") {
+        document.write(`O ${nome} ama o ${time}`)
+      }
+      historia("Tutiara", undefined)   -> Dessa forma o primeiro parâmetro da assinatura da função é sobrescrito e o segundo é mantido
+
+
+- Arrow function é uma função com a ideia de flecha. Veja a sintaxe:
+    - Antigamente era só conhecida como função anônima, ou seja, sem nome:
+        - let quadrado = function(x) {
+            return x * x
+          }
+          console.log(quadrado(3))
+
+    - Atualmente a "arrow function", ou também função anônima, aparece da seguinte forma:
+        - let quadrado = (x) => {   --> O sinal "=>" retoma a ideia de uma flecha e não é mais necessário o uso da palavra "function"
+            return x * x
+          }
+          console.log(quadrado(3))
+        
+        - O uso do parenteses se torna opcional quando houver apenas um parâmetro:
+          let quadrado = x => {
+            return x * x
+          }
+          console.log(quadrado(3))
+
+    - Outros exemplos:
+        - O uso do "return" também se torna opcional quando não houver lógica extensa ou blocos de código:
+          let quadrado = x => x * x
+          console.log(quadrado(3))
+
+        - O "return" também pode ser substituído em alguns casos:
+          let parOuImpar = numero => numero % 2 === 0 ? "par" : "ímpar"
+          console.log(parOuImpar(10))
+
+
+
+INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
+------------------------------------------------------
+- Procedural, estruturado e imperativo:
+    - São paradigmas chamados de procedimentos (procedures) para manipulação de dados, sendo divididos em lógico e funcional:
+      let a = 10
+      let b = 7
+      let operador = "multiplicador"
+      function calcular(a, b, operador) {
+        if(operador === "multiplicador") {
+            console.log(a * b)
+        }
+      }
+      calcular(a, b, operador)
+
+- Orientado a objetos:
+    - Também são paradigmas estruturados de dados, divididos em concorrente e reativo, porém, com comportamentos diferentes:
+      class Calculadora {
+        constructor() {
+            this.a = 10
+            this.b = 7
+            this,operador = "multiplicador"
+        }
+        calcular() {
+            if(this.operador === "multiplicador") {
+                console.log(this.a * this.b)
+            }
+        }
+      }
+      calculadora = new Calculadora()
+      calculadora.calcular()
+
+    - Além disso, o paradigma de OO, possui quatro fundamentos:
+        - Abstração: é a capacidade de abstrair elementos do mundo real para a programação
+
+        - Encapsulamento
+
+        - Herança
+
+        - Poliformismo
+
+    - A abstração é composta por:
+        - Entidade:
+            - Carro
+            - Conta bancária
+
+        - Identidade:
+            - x = new Carro()
+            - y = new ContaBancaria()
+
+        - Características (atributos):
+            - Marca, modelo, cor e quantidade de portas
+            - Agência, número da conta, saldo e limite
+
+        - Ações (métodos):
+            - Ligar, desligar, acelerar e freiar
+            - Depositar, sacar e consultar o saldo
