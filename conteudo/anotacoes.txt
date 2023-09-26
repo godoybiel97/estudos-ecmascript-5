@@ -132,9 +132,10 @@ INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
     - Além disso, o paradigma de OO, possui quatro fundamentos:
         - Abstração: é a capacidade de abstrair elementos do mundo real para a programação
 
-        - Encapsulamento
+        - Encapsulamento: tornam os atributos e métodos mais seguros, além de facilitar a implementação e alteração dos dados e de
+          forma reutilizável
 
-        - Herança
+        - Herança: colabora para o código ser reutilizável, menos redundante e de fácil manutenção
 
         - Poliformismo
 
@@ -154,3 +155,32 @@ INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
         - Ações (métodos):
             - Ligar, desligar, acelerar e freiar
             - Depositar, sacar e consultar o saldo
+
+        - Uma das diferenças entre da programação OO e a procedural é a quantidade de código escrita, além de vincular as funções ao objeto
+
+    - O encapsulamento pode apresentar dados privados ou públicos:
+        - private: utilizado para métodos e atributos, permitindo o acesso somente pelo objeto através de getters e setters
+
+        - protect: utilizado para dados protegidos
+
+        - public: utilizado para métodos e atributos
+
+    - A herança também é conhecida por classe pai, classe mãe, super classe ou classes e subclasses:
+        - A ideia da herança é atribuir atributos e métodos que sejam comuns entre classes diferentes:
+          - class Animal
+          - class Cachorro
+          - class Gato
+        
+        - Para implementar uma super classe é necessário utilizar a palavra "extends":
+          - class Cachorro extends Animal {}
+          - Dessa forma é possível utilizar atributos e métodos da classe pai
+
+        - Utilização do operador super() para referenciar os dados da super classe:
+          - super() só é utilizado em classes que recebem herança e pode utilizar parâmetros
+          
+          - class Cachorro extends Animal {
+              constructor() {
+                super()
+                this.nome = "Doguinho"
+              }
+            }
