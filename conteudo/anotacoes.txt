@@ -112,6 +112,7 @@ INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
       }
       calcular(a, b, operador)
 
+
 - Orientado a objetos:
     - Também são paradigmas estruturados de dados, divididos em concorrente e reativo, porém, com comportamentos diferentes:
       class Calculadora {
@@ -137,7 +138,7 @@ INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
 
         - Herança: colabora para o código ser reutilizável, menos redundante e de fácil manutenção
 
-        - Poliformismo
+        - Poliformismo: além de ser reutilizável, auxilia na sobrescrita de métodos 
 
     - A abstração é composta por:
         - Entidade:
@@ -167,20 +168,111 @@ INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
 
     - A herança também é conhecida por classe pai, classe mãe, super classe ou classes e subclasses:
         - A ideia da herança é atribuir atributos e métodos que sejam comuns entre classes diferentes:
-          - class Animal
-          - class Cachorro
-          - class Gato
+            - class Animal
+            - class Cachorro
+            - class Gato
         
         - Para implementar uma super classe é necessário utilizar a palavra "extends":
-          - class Cachorro extends Animal {}
-          - Dessa forma é possível utilizar atributos e métodos da classe pai
+            - class Cachorro extends Animal {}
+            - Dessa forma é possível utilizar atributos e métodos da classe pai
 
         - Utilização do operador super() para referenciar os dados da super classe:
-          - super() só é utilizado em classes que recebem herança e pode utilizar parâmetros
+            - super() só é utilizado em classes que recebem herança e pode utilizar parâmetros, ou seja, se tem "extends" tem super()
           
-          - class Cachorro extends Animal {
-              constructor() {
-                super()
-                this.nome = "Doguinho"
+            - class Cachorro extends Animal {
+                constructor() {
+                  super()
+                  this.nome = "Doguinho"
+                }
               }
+          
+            - Os parâmetros passados pelo constructor e super referenciam dados diferentes:
+                - this: representa os atributos da classe
+                - constructor(): os parâmetros são variáveis de escopo
+                - super(): os parâmetros apontam para o constructor da classe
+
+    - O poliformismo pode sobrescrever os métodos nos métodos filhos:
+        - class Passaro extends Animal {
+            constructor(bico, cor, tamanho, peso) {
+              super(cor, tamanho, peso)
+              this.bico = bico
             }
+            voar() {
+              console.log("Voar")
+            }
+          }
+
+          class Avestruz extends Passaro {
+            constructor() {
+              super("Grande", "Cinza", 250, 15000)
+            }
+
+            enterrarCabeca() {
+              console.log("Enterrar cabeça")
+            }
+
+            voar() {
+              console.log("Não voa")
+            }
+          }
+
+          let avestruz = new Avestruz()
+          avestruz.enterrarCabeca()
+          avestruz.voar()
+
+
+- Objetos literais:
+    - Notação de classe (ES6)
+
+    - Notação de objeto literal ou estático
+
+    - Embora pareçam a mesma coisa, ambos podem ter objetivos diferentes:
+        - Utilizar a classe para construir um objeto que instancie vários outros objetos (coleção)
+
+        - Utilizar o literal quando se tratar apenas de um objeto e seu uso é mais comum pela praticidade:
+            - Um formulário pode ser enviado para um servidor, os dados são recuperados, cria-se um objeto literal que depois é convertido em JSON,
+              esse arquivo é enviado via requisição HTTPS, recebido por um servidor e depois armazenado 
+    
+    - Modificação e inclusão de dados:
+        - let pessoa = {
+            nome: "Gabriel",
+            idade: 26
+          }
+
+        - Para incluir basta recuperar o objeto e criar o novo atributo e seu valor:
+            - pessoa.sobreNome = "Godoy"
+
+        - Para modificar basta recuperar o objeto e atribuir um novo valor ao atributo:
+            - pessoa.idade = 25
+
+
+- Objetos únicos:
+    - Todo objeto literal pode-se tornar único, ou seja, um objeto perfil pode ser referenciado numa variável pessoa, permitindo que o perfil 
+      manipule os atributos de pessoa:
+        - let perfil = {
+            nome: "Gabriel",
+            idade: 26,
+            usuario: "ADMIN"
+          }
+
+        - let pessoa = perfil
+
+
+- Funções factory:
+    - É um conceito ou padrão não obrigatório, mas que, dependendo do caso, pode auxiliar na resolução de problemas
+
+    - É a combinação da chamada de funções com o retorno de objetos literais, criados de acordo com os parâmetros passados para a função
+
+    - let bicicletaFactory2 = function(marca, cor, aro) {
+        //Alguma lógica
+        return {
+          marca: marca,
+          cor: cor,
+          aro: aro,
+          pedalar() {
+            console.log("Pedalando")
+          }
+        }
+      }
+      let bicicleta2 = bicicletaFactory2("Velozter", "Vermelha", 26)
+      console.log(bicicleta2)
