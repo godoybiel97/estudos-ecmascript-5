@@ -276,3 +276,108 @@ INTRODUÇÃO A ORIENTAÇÃO A OBJETOS - FUNDAMENTOS DO ES6
       }
       let bicicleta2 = bicicletaFactory2("Velozter", "Vermelha", 26)
       console.log(bicicleta2)
+
+
+
+INTRODUÇÃO A PROTOTYPE - FUNDAMENTOS DO ES6
+-------------------------------------------
+- Object:
+    - Todos os objetos em JavaScript descendem de Object e por trás disso existe um conceito conhecido por prototype
+
+    - Todo objeto criado é um herdeiro de Object, dessa forma é possível utilizar métodos e atributos originados dele:
+        - Object é um padrão do JS, ao invés de um objeto ele é uma função nativa
+
+        - __proto__: é um atributo utilizado para referenciar um objeto, podendo ser utilizado com o conceito de herança
+            - Objetc.prototype
+              let animal = { atrib1: "a"}
+              let vertebrado = { __proto__: animal, atrib2: "b"}
+              let ave = { __proto__: vertebrado, atrib3: "c"}
+              console.log(ave.atrib2, vertebrado.atrib1)
+
+        - É possível criar um atributo global a partir de Object.prototype, porém, é necessário muito cuidado ao utilizar esse método:
+            - Objetc.prototype.novoAtributo = 50: todos os objetos criados a seguir terão o conteúdo novoAtributo = 50
+
+
+
+INTRODUÇÃO A OPERADOR REST/SPREAD - FUNDAMENTOS DO ES6
+------------------------------------------------------
+- O operador rest/spread é constituído por "..." (retisências). Cada definição depende da situação que é usado:
+    - Rest: significa juntar e é muito utilizado no contexto de funções
+        - Tem a característica de agrupar valores indefinidos num array
+
+        - function soma(...param) { //Quando o parâmetro de uma função for rest, isso significa que o valor inserido na função retornará um array
+            let resultado = 0
+            console.log(param)
+            param.forEach(valor => resultado += valor)
+            return resultado
+          }
+          console.log(soma(1, 2, 3))
+
+    - Spread: significa espalhar, portanto podemos utiliza-lo em strings, arrays e objetos
+        - let frase = "Como utilizar o comando rest/spread"
+          console.log(frase)
+          console.log(...frase)
+
+
+
+DESESTRUTURAÇÃO - FUNDAMENTOS DO ES6
+------------------------------------
+- Esse estrutura é tão óbvia quanto se parece. Ela é responsável por retirar informações de um conteúdo:
+    - Arrays:
+        - O valor de cada índice pode ser armazenado numa nova variável: 
+            - let frutas = ["Abacaxi", "Banana", "Carambola", "Damasco", "Figo"]
+              let [a, b, c, d, e] = frutas
+
+        - Declarar um espaço ignora a posição de um índice:
+            - let salgados = ["Bolinho de queijo", "Coxinha", "Esfiha", "Kibe"]
+              let [f, , g, h] = salgados
+
+        - Esses fundamentos podem ser aplicados num array dimensional:
+            - let doces = [["Beijinho", "Bem-Casado", "Brigadeiro"], ["Canudo", "Torta"]]
+              let [, [, i]] = doces
+
+        - É possível realiza-lo através de uma função:
+            - function desestruturar([a, b, c, d, e]) {
+                console.log(a, b, c, d, e)
+              }
+            desestruturar(frutas)
+
+        - É possível utilizar o operador rest na desestruturação:
+            - let [indice, ...outros] = frutas
+              console.log(indice)
+              console.log(outros)
+
+        - Declarar valores para índices inexistentes retornará o valor "undefined"
+
+    - Objetos:
+        - Para desestruturar, basta selecionar os atributos da sua preferência:
+            - let produto = {
+                nome: "Notebook",
+                preco: 2500,
+                mouse: false,
+                carregador: true,
+                detalhes: {
+                  fabricante: "Dell",
+                  modelo: undefined
+                }
+              }
+              let {nome, preco} = produto
+
+        - É possível alterar o nome original dos atributos e adicionar um novo atributo:
+            - let {mouse: m, carregador: c, teclado = false} = produto
+
+        - É possível acessar atributos cujo valor é um objeto:
+            - let {detalhes: {fabricante, modelo}} = produto
+
+        - A desestruturação pode ser feita por uma função:
+            - function desestruturar({nome, preco, mouse}) {
+                console.log(nome, preco, mouse)
+              }
+              desestruturar(produto)
+
+        - É possível utilizar o operador rest na desestruturação:
+            - let {carregador, ...outros} = produto
+              console.log(carregador)
+              console.log(outros)
+
+        - Declarar valores para atributos inexistentes retornará o valor "undefined"
