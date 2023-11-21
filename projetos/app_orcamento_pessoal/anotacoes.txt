@@ -1,8 +1,13 @@
 PROJETO PRÁTICO - FUNDAMENTOS DO ES6
 ------------------------------------
+- Esse projeto tem como objetivo testar os conhecimentos absorvidos do ES6. O "App Orçamento Pessoal" é uma aplicação simples que simula a organização de gastos rotineiros,
+além disso, sobre as tecnologias, também é composto por processos básicos, como por exemplo: HTML, Bootstrap e fundamentos de JavaScript.
+O projeto permite cadastrar e consultar uma despesa, sendo ela baseada na data, tipo, descrição e valor.
+
+- Configuração:
 1. Estruturar HTML
 2. Configurar Bootstrap
 4. Configurar JQuery
 5. Inserir arquivos JavaScript
-6. Verificar o layout,responsividade e redirecionamento de páginas
+6. Verificar o layout, responsividade e redirecionamento de páginas
 7. Se as configurações anteriores estiverem funcionando, começar a estruturação dos scripts JS 

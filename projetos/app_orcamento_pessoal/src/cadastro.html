@@ -56,15 +56,15 @@
         <div class="col-md-2">
           <select class="form-select" id="mes">
             <option selected disabled value="">Mês</option>
-            <option value="1">Janeiro</option>
-            <option value="2">Fevereiro</option>
-            <option value="3">Março</option>
-            <option value="4">Abril</option>
-            <option value="5">Maio</option>
-            <option value="6">Junho</option>
-            <option value="7">Julho</option>
-            <option value="8">Agosto</option>
-            <option value="9">Setembro</option>
+            <option value="01">Janeiro</option>
+            <option value="02">Fevereiro</option>
+            <option value="03">Março</option>
+            <option value="04">Abril</option>
+            <option value="05">Maio</option>
+            <option value="06">Junho</option>
+            <option value="07">Julho</option>
+            <option value="08">Agosto</option>
+            <option value="09">Setembro</option>
             <option value="10">Outubro</option>
             <option value="11">Novembro</option>
             <option value="12">Dezembro</option>
@@ -72,12 +72,12 @@
         </div>
         
         <div class="col-md-2">
-          <input type="date" class="form-select" placeholder="Dia" id="dia" />
+          <input type="text" class="form-control" placeholder="Dia do mês" id="dia" />
         </div>
 
         <div class="col-md-6">
           <select class="form-select" id="tipo">
-            <option selected disabled>Tipo</option>
+            <option value="" selected disabled>Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
@@ -97,11 +97,31 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onclick="cadastrarDespesa()">
             <i class="fas fa-plus"></i>
           </button>
         </div>
       </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="cadastroDespesa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div id="modal_status">
+              <h1 class="modal-title fs-5" id="titulo_modal"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="descricao_modal">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="modal_btn" data-bs-dismiss="modal"></button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script src="app.js"></script>
   </body>	
 </html>

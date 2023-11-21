@@ -14,7 +14,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	</head>
 
-  <body>
+  <body onload="listaDespesas()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -34,6 +34,19 @@
               <a class="nav-link" href="consulta.html">Consulta</a>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div class="position-absolute w-100">
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
+          <div class="" role="alert" aria-live="assertive" aria-atomic="true" id="notificacao">
+            <div class="d-flex">
+              <div class="toast-body text-light" id="mensagem">
+                
+              </div>
+              <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -56,15 +69,15 @@
         <div class="col-md-2">
           <select class="form-select" id="mes">
             <option selected disabled value="">Mês</option>
-            <option value="1">Janeiro</option>
-            <option value="2">Fevereiro</option>
-            <option value="3">Março</option>
-            <option value="4">Abril</option>
-            <option value="5">Maio</option>
-            <option value="6">Junho</option>
-            <option value="7">Julho</option>
-            <option value="8">Agosto</option>
-            <option value="9">Setembro</option>
+            <option value="01">Janeiro</option>
+            <option value="02">Fevereiro</option>
+            <option value="03">Março</option>
+            <option value="04">Abril</option>
+            <option value="05">Maio</option>
+            <option value="06">Junho</option>
+            <option value="07">Julho</option>
+            <option value="08">Agosto</option>
+            <option value="09">Setembro</option>
             <option value="10">Outubro</option>
             <option value="11">Novembro</option>
             <option value="12">Dezembro</option>
@@ -72,12 +85,12 @@
         </div>
         
         <div class="col-md-2">
-          <input type="date" class="form-select" placeholder="Dia" id="dia" />
+          <input type="text" class="form-control" placeholder="Dia do mês" id="dia" />
         </div>
 
         <div class="col-md-6">
           <select class="form-select" id="tipo">
-            <option selected disabled>Tipo</option>
+            <option value="" selected disabled>Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
@@ -97,7 +110,7 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onclick="consultarDespesas()">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -116,12 +129,13 @@
               </tr>
             </thead>
 
-            <tbody>
+            <tbody id="lista_despesas">
             </tbody>
           </table>
         </div>
       </div>
     </div>
-  </body>	
 
+    <script src="app.js"></script>
+  </body>	
 </html>
