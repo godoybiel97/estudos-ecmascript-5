@@ -4,13 +4,13 @@
 Esse projeto resume-se no aprendizado de JavaScript através dos seus fundamentos, exercícios e aplicação do conteúdo absorvido em projetos simples, porém, com foco na prática dos conhecimentos adquiridos. <br>
 </p>
 
-<p>
+<p align="center">
   <img alt="JavaScript" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ahpxPO0jLGb9EWrY2qQPhg.jpeg">
 </p>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-objetivo-do-projeto">Objetivo do Porjeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-objetivo-do-projeto">Objetivo do Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-utilizar">Como utilizar </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-links">Links</a>&nbsp;&nbsp;&nbsp;
@@ -49,8 +49,8 @@ Para melhorar a compreensão e facilitar o manuseio do projeto, os assuntos fora
 
 Veja a imagem abaixo:  
 
-<p>
-  <img alt="Estrutura de pastas" src="./img/estrutura-pasta.png">
+<p align="center">
+  <img alt="Estrutura de pastas" src="./projetos/app_orcamento_pessoal/img/estrutura-pasta.png">
 </p>
 
 ## 🛠 Funcionalidades
@@ -59,30 +59,30 @@ O projeto Orçamento Pessoal é uma forma para aplicar seus conhecimentos, poré
 
 Nela é possível cadastrar uma despesa, consultar os registros, filtrar e excluir:  
 - O cadastro solicita as informações do ano, mês, dia, tipo de despesa, descrição e valor;  
-    <p>
-      <img alt="Cadastro de despesa" src="./img/registro-despesa.png">
-      <img alt="Cadastro de despesa" src="./img/registro-despesa-tipo.png">
-      <img alt="Cadastro de despesa" src="./img/modal-sucesso.png">
-      <img alt="Cadastro de despesa" src="./img/modal-erro.png">
+    <p align="center">
+      <img alt="Cadastro de despesa" src="./projetos/app_orcamento_pessoal/img/registro-despesa.png">
+      <img alt="Cadastro de despesa" src="./projetos/app_orcamento_pessoal/img/registro-despesa-tipo.png">
+      <img alt="Cadastro de despesa" src="./projetos/app_orcamento_pessoal/img/modal-sucesso.png">
+      <img alt="Cadastro de despesa" src="./projetos/app_orcamento_pessoal/img/modal-erro.png">
     </p>
     <br>
 
 - A consulta permite verificar todas as informações cadastradas;  
-    <p>
-      <img alt="Consulta de despesa" src="./img/consulta-despesa.png">
-      <img alt="Consulta de despesa" src="./img/consulta-despesa-dados.png">
+    <p align="center">
+      <img alt="Consulta de despesa" src="./projetos/app_orcamento_pessoal/img/consulta-despesa.png">
+      <img alt="Consulta de despesa" src="./projetos/app_orcamento_pessoal/img/consulta-despesa-dados.png">
     </p>
     <br>
 
 - Para filtrar um dado, pelo menos um campo do formulário precisa estar preenchido;  
-    <p>
-      <img alt="Filtro de despesa" src="./img/notificacao-aviso.png">
+    <p align="center">
+      <img alt="Filtro de despesa" src="./projetos/app_orcamento_pessoal/img/notificacao-aviso.png">
     </p>
     <br>
 
 - Ao excluir um registro, a lista é atualizada.  
-    <p>
-      <img alt="Filtro de despesa" src="./img/notificacao-erro.png">
+    <p align="center">
+      <img alt="Filtro de despesa" src="./projetos/app_orcamento_pessoal/img/notificacao-erro.png">
     </p>
     <br>
 
